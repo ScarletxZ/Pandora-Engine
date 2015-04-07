@@ -2,8 +2,19 @@
 * Pandora-Engine
 * License to Scarlet. 
 * Thanks to other PE contributors for the help! 
-* Special thanks to andrew8808 for giving a tutorial for this~
+* Special thanks to Andrew for giving a tutorial for this at Tuts+ 
 */
+
+if (typeof Array.prototype.indexOf !== "function") {
+ Array.prototype.indexOf = function(item) {
+  for(var i=0;i<this.length;i++) {
+   if(this[i] === item) {
+    return i;
+   }
+  }
+  return -1;
+ };
+}
 
 window.pandora = (function() {
  function Pandora(els) {
@@ -13,10 +24,10 @@ window.pandora = (function() {
   this.length = els.length;
  }
  
- Pandora.prototype.audio = function(audioname) {
+ Pandora.prototype.audio = function(audio) {
   /* will only works with .MP3 files */
-   audio = new Audio(audioname);
-  return new playAudio();
+   var audio = new Audio(audio);
+   return new playAudio();
    function playAudio() {
     audio.play;
   }
@@ -33,7 +44,27 @@ window.pandora = (function() {
    els = [selector];
   }
   return new Pandora(els);
+  
+  create: function(tagName, attrs) {
+   var el = new Pandora([document.createElement(tagname)]);
+   if(attrs) {
+    if(attrs.className) {
+     el.addClass(attrs.className);
+     delete attrs.className;
+    }
+    if(attrs.text) {
+     el.text(attrs.text);
+     delete el.text;
+    }
+    for(var key in attrs) {
+     if(attrs.hasOwnProperty(key)) {
+      el.attr(key, attrs[key]);
+     }
+    }
+   }
+   return el;
+  }
 };
 
  return pandora;
-}();
+}());
