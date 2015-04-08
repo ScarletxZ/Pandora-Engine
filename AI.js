@@ -17,19 +17,19 @@ set to disable for otherwise */
 /* ================= Warning : Don't touch UNLESS IF YOU KNOW WHAT YOU ARE DOING! =============== */
 
 /* Reference to StackOverflow. */
-function logEsprima() {
+function logSE() {
  head = document.getElementsByTagName('head')[0];
  script = document.createElement('script');
  script.setAttribute('type', 'text/javascript');
- script.setAttribute('src', '/esprima.js');
+ script.setAttribute('src', '/syntaxError.js');
  head.appendChild(script);
 }
 
-function checkEsprima() {
- url = '/esprima.js';
+function checkSE() {
+ url = '/syntaxError.js';
  if(!url) {
   scripts = document.getElementsByTagName('script');
-  for(var i=script.length;i--;) {
+  for(var i=scripts.length;i--;) {
    if(scripts[i].src == url) return true;
   }
   return false;
