@@ -9,8 +9,10 @@
 var description = "Hello, meet Pandora, a mascot for Pandora Engine. Pandora will help you code in JavaScript, every single 
 code you written will result so many reactions from Pandora!";
 
-var audioSwitch = 'enable'; /* set to 'enable' if you like to use the audio to make Pandora talk with a sound, not only the text,
-set to disable for otherwise */
+var audioSwitch = true; /* set to true if you like to use the audio to make Pandora talk with a sound, not only the text,
+set to false for otherwise */
+
+var enableGraph = true; /* set to false to not display the Pandora's graphic, type true if otherwise */
 
 /* ======================== END ============================== */
 
@@ -36,14 +38,19 @@ function checkSE() {
  }
 }
 
-if(audioSwitch.toLowerCase() == 'disable') { window.activateAudio === false; }
-if(audioSwitch.toLowerCase() == 'enable') { window.activateAudio === false; }
+if(audioSwitch === true) { window.activateAudio === true; }
+if(audioSwitch === false) { window.activateAudio === false; }
 console.log(description);
 function activateAudio() { 
  audio1 = new Audio('audio_link_1');
  audio1.play;
  audio2 = new Audio('audio_link_2');
  audio2.play;
+}
+
+function showGraphic() {
+ graphic = $.get('/link-to-graphic-here');
+ /* some random codes */
 }
 
 /* will edit later if found some resources */
