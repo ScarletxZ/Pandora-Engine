@@ -32,6 +32,13 @@ window.pandora = (function() {
     audio.play;
   }
 }
+
+ Pandora.prototype.loop = function(varname) {
+   /* added more scrumbs later */
+   for(var i=0;i<varname.length;i++) {
+    /* added later */
+   }
+ }
  
  var pandora = {
   get: function(selector) {
