@@ -26,18 +26,36 @@ window.pandora = (function() {
  
  Pandora.prototype.audio = function(audio) {
   /* will only works with .MP3 files */
-   var audio = new Audio(audio);
+   new Audio(audio);
    return new playAudio();
    function playAudio() {
     audio.play;
   }
-}
+};
 
  Pandora.prototype.loop = function(varname) {
    /* added more scrumbs later */
    for(var i=0;i<varname.length;i++) {
     /* added later */
    }
+ };
+ 
+ /* array handling */
+ 
+ Pandora.prototype.duplicate = function(arr) {
+  return array.concat(arr);
+ };
+ 
+ Pandora.prototype.add = function(arr) {
+  return array.push(arr);
+ };
+ 
+ Pandora.prototype.toString = function() {
+  array.toString();
+ }
+ 
+ Pandora.prototype.erase = function() {
+  array.pop();
  }
  
  var pandora = {
@@ -71,7 +89,7 @@ window.pandora = (function() {
    }
    return el;
   }
-};
+ });
 
  return pandora;
 }());
