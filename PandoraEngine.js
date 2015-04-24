@@ -92,4 +92,4 @@ window.pandora = (function() {
  });
 
  return pandora;
-}());
+})();
